@@ -41,13 +41,7 @@ async def send_likes(like_count):
 
 
 async def main():
-    if len(sys.argv) > 1:
-        try:
-            await send_likes(like_count)
-        except ValueError:
-            print("Ошибка: не указано количество лайков.")
-    else:
-        print("Ошибка: проблемы внутри скрипта.")
+    await send_likes(like_count)
 
 
 if __name__ == "__main__":
