@@ -1,0 +1,13 @@
+stages:
+  - check_connection
+  - send_likes
+
+check_connection:
+  stage: check_connection
+  script: echo "check_connection stage"
+  when: manual
+
+send_likes:
+  stage: send_likes
+  script: echo "send_likes stage"
+  when: manual
