@@ -2,7 +2,7 @@ from telethon import TelegramClient, events
 import os
 import sys
 import asyncio
-from config import api_id, api_hash, phone_number, SAVE_PATH
+from config import api_id, api_hash
 from checker import Checker
 
 client = TelegramClient("session_name", api_id, api_hash)
