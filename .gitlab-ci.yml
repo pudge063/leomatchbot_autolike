@@ -6,12 +6,12 @@ check_connection:
   stage: check_connection
   tags:
     - sh-runner
-  script: echo "check_connection stage"
+  script: echo "check_connection stage!"
   when: manual
 
 send_likes:
   stage: send_likes
   tags:
     - sh-runner
-  script: echo "send_likes stage"
+  script: echo "send_likes stage!"
   when: manual
