@@ -6,12 +6,16 @@ check_connection:
   stage: check_connection
   tags:
     - sh-runner
-  script: echo "check_connection stage!"
+  script:
+    - echo "check_connection stage!"
+    - docker build --build-arg like_count=$LIKE_COUNT --build-arg api_id=$API_ID --build-arg api_hash=$API_HASH -t leo_liker .
   when: manual
 
 send_likes:
   stage: send_likes
   tags:
     - sh-runner
-  script: echo "send_likes stage!"
+  script:
+    - echo "send_likes stage!"
+    - docker run -e LIKE_COUNT=$LIKE_COUNT -e API_ID=$API_ID -e API_HASH=$API_HASH leo_liker
   when: manual
