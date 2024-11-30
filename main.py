@@ -2,7 +2,7 @@ from telethon import TelegramClient, events
 import os
 import sys
 import asyncio
-from config import api_id, api_hash
+from config import api_id, api_hash, like_count
 from checker import Checker
 
 client = TelegramClient("session_name", api_id, api_hash)
@@ -43,13 +43,11 @@ async def send_likes(like_count):
 async def main():
     if len(sys.argv) > 1:
         try:
-            like_count = int(sys.argv[1])
-            print(like_count, type(like_count))
             await send_likes(like_count)
         except ValueError:
-            print("Ошибка: аргумент должен быть числом.")
+            print("Ошибка: не указано количество лайков.")
     else:
-        print("Ошибка: не указан аргумент для количества лайков.")
+        print("Ошибка: проблемы внутри скрипта.")
 
 
 if __name__ == "__main__":
