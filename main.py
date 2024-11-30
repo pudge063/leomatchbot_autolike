@@ -44,6 +44,7 @@ async def main():
     if len(sys.argv) > 1:
         try:
             like_count = int(sys.argv[1])
+            print(like_count, type(like_count))
             await send_likes(like_count)
         except ValueError:
             print("Ошибка: аргумент должен быть числом.")
