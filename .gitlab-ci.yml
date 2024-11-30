@@ -17,5 +17,6 @@ send_likes:
     - sh-runner
   script:
     - echo "send_likes stage!"
+    - echo $LIKE_COUNT
     - docker run -e LIKE_COUNT=$LIKE_COUNT -e API_ID=$API_ID -e API_HASH=$API_HASH leo_liker
   when: manual
