@@ -1,0 +1,12 @@
+.venv
+__pycache__
+venv
+.env
+downloads
+all_images
+list
+list.txt
+list.json
+*.session
+*.pyc
+.idead
